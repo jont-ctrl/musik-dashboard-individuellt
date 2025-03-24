@@ -14,7 +14,7 @@ export default function NavHeader() {
         {/* Logo (klickbar länk till startsidan) */}
         <Link
           to='/'
-          className='text-4xl font-extrabold text-white hover:text-tertiary transition-all duration-300 transform hover:scale-110'
+          className='text-4xl font-extrabold text-white hover:text-tertiary active:scale-90 transition-all duration-200 transform hover:scale-110'
         >
           BeatStats
         </Link>
@@ -24,7 +24,7 @@ export default function NavHeader() {
           <li>
             <Link
               to='/'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-300 transform inline-block'
+              className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
             >
               Home
             </Link>
@@ -32,7 +32,7 @@ export default function NavHeader() {
           <li>
             <Link
               to='/top-songs'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-300 transform inline-block'
+              className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
             >
               Top Songs
             </Link>
@@ -40,12 +40,15 @@ export default function NavHeader() {
           <li>
             <Link
               to='/profiles'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-300 transform inline-block'
+              className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
             >
               Profiles
             </Link>
           </li>
         </ul>
+        <button className='cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'>
+          <span className='material-icons'>dark_mode</span>
+        </button>
 
         {/* Hamburger Icon for Mobile */}
         <button
@@ -54,9 +57,9 @@ export default function NavHeader() {
           aria-expanded={isOpen ? 'true' : 'false'} // Accessibility
           aria-label='Toggle menu'
         >
-          <span className='w-7 h-0.5 bg-white transform transition-all duration-300'></span>
-          <span className='w-7 h-0.5 bg-white transform transition-all duration-300'></span>
-          <span className='w-7 h-0.5 bg-white transform transition-all duration-300'></span>
+          <span className='w-7 h-0.5 bg-white transform transition-all duration-200'></span>
+          <span className='w-7 h-0.5 bg-white transform transition-all duration-200'></span>
+          <span className='w-7 h-0.5 bg-white transform transition-all duration-200'></span>
         </button>
       </nav>
 
@@ -70,7 +73,7 @@ export default function NavHeader() {
           <li>
             <a
               href='#home'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-300 transform inline-block'
+              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-200 transform inline-block'
             >
               Home
             </a>
@@ -78,7 +81,7 @@ export default function NavHeader() {
           <li>
             <a
               href='#stats'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-300 transform inline-block'
+              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-200 transform inline-block'
             >
               Stats
             </a>
@@ -86,7 +89,7 @@ export default function NavHeader() {
           <li>
             <a
               href='#profile'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-300 transform inline-block'
+              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-200 transform inline-block'
             >
               Profile
             </a>
