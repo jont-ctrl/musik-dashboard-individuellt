@@ -26,10 +26,10 @@ function Dashboard() {
 
   return (
     <main className='p-6 max-w-6xl mx-auto bg-white min-h-screen'>
-      <div className='flex justify-center pb-16'>
+      <div className='flex justify-center items-center gap-4 pb-16'>
         <h2>Users:</h2>
         <select
-          className='cursor-pointer text-2xl'
+          className='cursor-pointer text-2xl outline-1 outline-gray-100 p-2 px-4 rounded-2xl'
           onChange={handleUserChange}
           value={userMusicStats.id}
         >
@@ -41,24 +41,24 @@ function Dashboard() {
         </select>
       </div>
 
-      <div className='flex gap-6 flex-wrap md:flex-nowrap'>
+      <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
         {/* User info and Profile - vänster */}
-        <div className='bg-white p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
-          <h1 className='text-3xl font-bold mb-2 text-gray-800 underline'>
+        <div className='bg-white flex flex-col gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
+          <h1 className='text-3xl font-bold text-gray-800 underline'>
             <Link to={`/profiles/${userMusicStats.id}`}>
               {userMusicStats.name}
             </Link>
           </h1>
+          <img
+            src={userMusicStats.profilePicture}
+            alt={userMusicStats.name}
+            className='w-20 h-20 rounded-full border border-gray-300 shadow-sm'
+          />
           <p className='text-gray-600 text-sm'>ID: {userMusicStats.id}</p>
           <p className='text-gray-600 text-sm'>Email: {userMusicStats.email}</p>
           <p className='text-gray-600 text-sm'>
             Location: {userMusicStats.location}
           </p>
-          <img
-            src={userMusicStats.profilePicture}
-            alt={userMusicStats.name}
-            className='w-20 h-20 rounded-full mt-4 border border-gray-300 shadow-sm'
-          />
         </div>
 
         {/* Monthly streams - höger */}
@@ -80,7 +80,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className='flex gap-6 mt-6 flex-wrap md:flex-nowrap'>
+      <div className='flex justify-center gap-6 mt-6 flex-wrap md:flex-nowrap'>
         {/* UserLeaderboard - vänster */}
         <div className='bg-white p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
           <UserLeaderboard usersData={mockData} />
