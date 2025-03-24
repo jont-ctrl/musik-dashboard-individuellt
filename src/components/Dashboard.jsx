@@ -25,11 +25,11 @@ function Dashboard() {
   };
 
   return (
-    <main className='p-6 max-w-6xl mx-auto bg-white min-h-screen'>
+    <main className='p-6 max-w-6xl mx-auto bg-background dark:bg-background-dark min-h-screen'>
       <div className='flex justify-center items-center gap-4 pb-16'>
-        <h2>Users:</h2>
+        <h2 className='text-text dark:text-text-dark'>Users:</h2>
         <select
-          className='cursor-pointer text-2xl outline-1 outline-gray-100 p-2 px-4 rounded-2xl'
+          className='cursor-pointer text-2xl outline-1 text-text dark:text-text-dark outline-gray-200 dark:outline-gray-800 p-2 px-4 rounded-2xl'
           onChange={handleUserChange}
           value={userMusicStats.id}
         >
@@ -43,8 +43,8 @@ function Dashboard() {
 
       <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
         {/* User info and Profile - vänster */}
-        <div className='bg-white flex flex-col gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
-          <h1 className='text-3xl font-bold text-gray-800 underline'>
+        <div className='bg-white dark:bg-background-dark flex flex-col items-center gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
+          <h1 className='text-3xl font-bold text-text dark:text-text-dark underline'>
             <Link to={`/profiles/${userMusicStats.id}`}>
               {userMusicStats.name}
             </Link>
@@ -54,16 +54,20 @@ function Dashboard() {
             alt={userMusicStats.name}
             className='w-20 h-20 rounded-full border border-gray-300 shadow-sm'
           />
-          <p className='text-gray-600 text-sm'>ID: {userMusicStats.id}</p>
-          <p className='text-gray-600 text-sm'>Email: {userMusicStats.email}</p>
-          <p className='text-gray-600 text-sm'>
+          <p className='text-text-muted dark:text-text-muted-dark text-sm'>
+            ID: {userMusicStats.id}
+          </p>
+          <p className='text-text-muted dark:text-text-muted-dark text-sm'>
+            Email: {userMusicStats.email}
+          </p>
+          <p className='text-text-muted dark:text-text-muted-dark text-sm'>
             Location: {userMusicStats.location}
           </p>
         </div>
 
         {/* Monthly streams - höger */}
-        <div className='bg-white p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
-          <p className='text-lg font-semibold text-gray-800'>
+        <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
+          <p className='text-lg font-semibold text-text dark:text-text-dark'>
             Monthly streams this year:
           </p>
           <div className='h-96'>
@@ -73,7 +77,11 @@ function Dashboard() {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey='streams' fill='#4F46E5' radius={[5, 5, 0, 0]} />
+                <Bar
+                  dataKey='streams'
+                  fill='var(--color-primary)'
+                  radius={[5, 5, 0, 0]}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -82,23 +90,27 @@ function Dashboard() {
 
       <div className='flex justify-center gap-6 mt-6 flex-wrap md:flex-nowrap'>
         {/* UserLeaderboard - vänster */}
-        <div className='bg-white p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
+        <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
           <UserLeaderboard usersData={mockData} />
         </div>
 
         {/* Top Songs - höger */}
-        <div className='bg-white p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-4'>
+        <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
+          <h2 className='text-text dark:text-text-dark text-xl font-semibold mb-4'>
             Top Songs
           </h2>
-          <ul className='grid grid-cols-1 gap-4'>
+          <ul className='grid grid-cols-1 gap-4 '>
             {userMusicStats.topSongs.map((song, index) => (
               <li key={index} className='border-b last:border-b-0 py-3'>
-                <p className='text-gray-700 font-medium'>
+                <p className='text-text dark:text-text-dark font-medium'>
                   {song.song} -{' '}
-                  <span className='text-gray-500'>{song.artist}</span>
+                  <span className='text-text-muted dark:text-text-muted-dark'>
+                    {song.artist}
+                  </span>
                 </p>
-                <p className='text-gray-500'>Streams: {song.streams}</p>
+                <p className='text-text-muted dark:text-text-muted-dark'>
+                  Streams: {song.streams}
+                </p>
               </li>
             ))}
           </ul>

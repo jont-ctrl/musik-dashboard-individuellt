@@ -7,22 +7,25 @@ function AllProfiles() {
   return (
     <>
       <NavHeader />
-      <div>
+      <div className='py-8'>
         {mockData.users.map((user) => (
           <div
             key={user.id}
-            className='flex items-center p-4 bg-white border-b border-gray-200 hover:bg-gray-50 transition'>
+            className='flex  items-center p-4 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 transition'
+          >
             <img
               src={user.profilePicture}
               alt={`${user.name}'s profile`}
               className='w-10 h-10 rounded-full mr-4'
             />
-            <div className='flex-grow'>
-              <p className='text-lg font-medium text-gray-900'>
+            <div className='flex-grow '>
+              <p className='flex gap-2 text-lg font-medium text-text dark:text-text-dark'>
                 <Link to={`/profiles/${user.id}`}>{user.name}</Link>
-                <span className='text-gray-500'>({user.location})</span>
+                <span className='text-text-muted dark:text-text-muted-dark'>
+                  ({user.location})
+                </span>
               </p>
-              <p className='text-sm text-gray-600'>
+              <p className='text-sm text-text-muted dark:text-text-muted-dark'>
                 Total Streams: {user.totalStreams}
               </p>
             </div>

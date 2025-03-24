@@ -32,26 +32,30 @@ function Profiles() {
       <main className='p-6'>
         <div className='max-w-4xl mx-auto'>
           <div className='flex gap-4 items-center justify-center'>
-            <button className='text-4xl'>
+            <button className=' flex justify-center items-center text-4xl '>
               <Link to='/'>⬅️</Link>
             </button>
-            <h1 className='text-4xl font-bold mb-4'>{user.name}</h1>
+            <h1 className=' text-text dark:text-text-dark text-4xl font-bold '>
+              {user.name}
+            </h1>
           </div>
-          <div className='bg-white p-6 rounded-lg shadow-md'>
+          <div className='bg-background dark:bg-background-dark p-6 rounded-lg shadow-md'>
             <img
               src={user.profilePicture}
               alt={`${user.name}'s profile`}
               className='w-24 h-24 rounded-full mx-auto mb-4'
             />
-            <p className='text-gray-600 text-center mb-2'>
+            <p className='text-text-muted dark:text-text-muted-dark text-center mb-2'>
               <strong>Email:</strong> {user.email}
             </p>
-            <p className='text-gray-600 text-center mb-4'>
+            <p className='text-text-muted dark:text-text-muted-dark text-center mb-4'>
               <strong>Location:</strong> {user.location}
             </p>
 
             <div className='mt-6'>
-              <h2 className='text-2xl font-bold mb-4'>Monthly Streams</h2>
+              <h2 className='text-text dark:text-text-dark text-2xl font-bold mb-4'>
+                Monthly Streams
+              </h2>
               <div className='h-96'>
                 <ResponsiveContainer width='100%' height='100%'>
                   <BarChart data={user.monthlyStreams}>

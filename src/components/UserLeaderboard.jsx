@@ -26,11 +26,11 @@ const UserLeaderboard = ({ usersData }) => {
 
   return (
     <div className='max-w-4xl mx-auto p-6'>
-      <h1 className='text-3xl font-bold text-gray-800 mb-6'>
+      <h1 className='text-3xl font-bold text-text dark:text-text-dark mb-6'>
         User Streams Leaderboard
       </h1>
       {users.length === 0 ? (
-        <p className='text-gray-500'>
+        <p className='text-text-muted dark:text-text-muted-dark'>
           No users to display. Check the console for errors.
         </p>
       ) : (
@@ -38,10 +38,10 @@ const UserLeaderboard = ({ usersData }) => {
           {users.map((user, index) => (
             <li
               key={user.id}
-              className='flex items-center p-4 bg-white border-b border-gray-200 hover:bg-gray-50 transition'
+              className='flex items-center p-4 bg-white dark:bg-background-dark border-b border-text-muted dark:border-text-muted-dark hover:bg-gray-50 transition'
             >
-              <span className='text-lg font-semibold text-gray-600 w-8'>
-                {index + 1}.
+              <span className='text-lg font-semibold text-text dark:text-text-dark w-8'>
+                {index + 1}
               </span>
               <img
                 src={user.profilePicture}
@@ -49,11 +49,13 @@ const UserLeaderboard = ({ usersData }) => {
                 className='w-10 h-10 rounded-full mr-4'
               />
               <div className='flex-grow'>
-                <p className='text-lg font-medium text-gray-900'>
+                <p className='text-lg font-medium text-text dark:text-text-dark'>
                   {user.name}{' '}
-                  <span className='text-gray-500'>({user.location})</span>
+                  <span className='text-text-muted dark:text-text-muted-dark'>
+                    ({user.location})
+                  </span>
                 </p>
-                <p className='text-sm text-gray-600'>
+                <p className='text-sm text-text-muted dark:text-text-muted-dark'>
                   Total Streams: {user.totalStreams}
                 </p>
               </div>
