@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 export default function NavHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  function handleDarkMode() {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle('dark');
+  }
 
   // Toggle mobile menu
   const toggleMenu = () => {
@@ -46,8 +52,15 @@ export default function NavHeader() {
             </Link>
           </li>
         </ul>
-        <button className='cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'>
-          <span className='material-icons'>dark_mode</span>
+        <button
+          className='cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'
+          onClick={handleDarkMode}
+        >
+          {darkMode ? (
+            <span className='material-icons'>light_mode</span>
+          ) : (
+            <span className='material-icons'>dark_mode</span>
+          )}
         </button>
 
         {/* Hamburger Icon for Mobile */}

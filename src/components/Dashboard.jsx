@@ -25,7 +25,7 @@ function Dashboard() {
   };
 
   return (
-    <main className='p-6 max-w-6xl mx-auto bg-gray-100 min-h-screen'>
+    <main className='p-6 max-w-6xl mx-auto bg-white min-h-screen'>
       <div className='flex justify-center pb-16'>
         <h2>Users:</h2>
         <select
