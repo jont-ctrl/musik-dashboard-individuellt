@@ -73,18 +73,18 @@ function Profiles() {
               </div>
             </div>
 
-            <div className='mt-6'>
+            <div className='mt-6 text-text dark:text-text-dark'>
               <h2 className='text-2xl font-bold mb-4'>Top Songs</h2>
               <ul className='space-y-3'>
                 {user.topSongs.map((song) => (
                   <li
                     key={song.song}
-                    className='bg-gray-50 p-4 rounded-lg shadow-sm'
+                    className='bg-background dark:bg-background-dark p-4 rounded-lg shadow-sm'
                   >
                     <p className='text-lg font-medium'>
                       {song.song} - {song.artist}
                     </p>
-                    <p className='text-sm text-gray-600'>
+                    <p className='text-sm text-text-muted dark:text-text-muted-dark'>
                       Streams: {song.streams}
                     </p>
                   </li>

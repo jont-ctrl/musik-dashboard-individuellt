@@ -38,7 +38,7 @@ const UserLeaderboard = ({ usersData }) => {
           {users.map((user, index) => (
             <li
               key={user.id}
-              className='flex items-center p-4 bg-white dark:bg-background-dark border-b border-text-muted dark:border-text-muted-dark hover:bg-gray-50 transition'
+              className='flex items-center p-4 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800  hover:bg-gray-50 transition'
             >
               <span className='text-lg font-semibold text-text dark:text-text-dark w-8'>
                 {index + 1}
