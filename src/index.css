@@ -22,3 +22,9 @@
 .qwewqe {
   background-color: hsl(0, 0%, 80%);
 }
+
+:focus-visible {
+  outline: 4px solid #f4d806;
+  border-radius: 1rem;
+  padding: 0.25rem;
+}

@@ -27,18 +27,27 @@ function Dashboard() {
   return (
     <main className='bg-background dark:bg-background-dark py-12 px-8 max-w-6xl mx-auto min-h-screen'>
       <div className='flex justify-center items-center gap-4 pb-16'>
-        <h2 className='text-text dark:text-text-dark'>Users:</h2>
-        <select
-          className='cursor-pointer text-2xl outline-1 bg-background dark:bg-background-dark text-text dark:text-text-dark outline-gray-200 dark:outline-gray-800 p-2 px-4 rounded-2xl'
-          onChange={handleUserChange}
-          value={userMusicStats.id}
-        >
-          {mockData.users.map((user) => (
-            <option key={user.id} value={user.id}>
-              {user.name}
-            </option>
-          ))}
-        </select>
+        <h2 className='text-text dark:text-text-dark' id='user-selector'>
+          Users:
+        </h2>
+        <div role='form' aria-labelledby='user-selector'>
+          <label htmlFor='user-select' className='sr-only'>
+            Choose a user from the list
+          </label>
+          <select
+            id='user-select'
+            className='cursor-pointer text-2xl outline-1 bg-background dark:bg-background-dark text-text dark:text-text-dark outline-gray-200 dark:outline-gray-800 p-2 px-4 rounded-2xl focus:ring-2 focus:ring-blue-500'
+            onChange={handleUserChange}
+            value={userMusicStats.id}
+            aria-label='Choose a user from the list'
+          >
+            {mockData.users.map((user) => (
+              <option key={user.id} value={user.id}>
+                {user.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
