@@ -25,7 +25,7 @@ function Dashboard() {
   };
 
   return (
-    <main className='p-6 max-w-6xl mx-auto bg-background dark:bg-background-dark min-h-screen'>
+    <main className='bg-background dark:bg-background-dark py-12 max-w-6xl mx-auto  min-h-screen'>
       <div className='flex justify-center items-center gap-4 pb-16'>
         <h2 className='text-text dark:text-text-dark'>Users:</h2>
         <select
@@ -67,7 +67,7 @@ function Dashboard() {
 
         {/* Monthly streams - höger */}
         <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
-          <p className='text-lg font-semibold text-text dark:text-text-dark'>
+          <p className='flex justify-center text-text dark:text-text-dark text-2xl font-bold mb-4'>
             Monthly streams this year:
           </p>
           <div className='h-96'>

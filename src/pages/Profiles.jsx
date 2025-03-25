@@ -53,7 +53,7 @@ function Profiles() {
             </p>
 
             <div className='mt-6'>
-              <h2 className='text-text dark:text-text-dark text-2xl font-bold mb-4'>
+              <h2 className='flex justify-center text-text dark:text-text-dark text-2xl font-bold mb-4'>
                 Monthly Streams
               </h2>
               <div className='h-96'>
@@ -65,7 +65,7 @@ function Profiles() {
                     <Legend />
                     <Bar
                       dataKey='streams'
-                      fill='#4F46E5'
+                      fill='var(--color-primary)'
                       radius={[5, 5, 0, 0]}
                     />
                   </BarChart>

@@ -30,10 +30,6 @@
   );
 } */
 
-.text-primary {
-  color: #06112f;
-}
-
 .text-tertiary {
   color: var(--color-tertiary);
 }

@@ -15,7 +15,7 @@ export default function NavHeader() {
   };
 
   return (
-    <header className='bg-primary dark:bg-primary-dark text-white py-6 px-8 sticky top-0 z-50 transition-all duration-500 ease-in-out shadow-xl rounded-bl-xl rounded-br-xl'>
+    <header className='bg-primary dark:bg-primary-dark text-white py-6 px-8 sticky top-0 z-50 transition-all duration-500 ease-in-out  rounded-bl-xl rounded-br-xl'>
       <nav className='flex justify-between items-center'>
         {/* Logo (klickbar länk till startsidan) */}
         <Link
