@@ -26,7 +26,7 @@ const UserLeaderboard = ({ usersData }) => {
 
   return (
     <div className='max-w-4xl mx-auto'>
-      <h2 className='text-2xl font-bold text-text dark:text-text-dark mb-6'>
+      <h2 className='text-3xl font-bold text-text dark:text-text-dark mb-6'>
         User Streams Leaderboard
       </h2>
       {users.length === 0 ? (

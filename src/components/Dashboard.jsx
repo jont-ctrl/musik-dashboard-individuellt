@@ -25,11 +25,11 @@ function Dashboard() {
   };
 
   return (
-    <main className='bg-background dark:bg-background-dark py-12 px-8 max-w-6xl mx-auto  min-h-screen'>
+    <main className='bg-background dark:bg-background-dark py-12 px-8 max-w-6xl mx-auto min-h-screen'>
       <div className='flex justify-center items-center gap-4 pb-16'>
         <h2 className='text-text dark:text-text-dark'>Users:</h2>
         <select
-          className='cursor-pointer text-2xl outline-1 text-text dark:text-text-dark outline-gray-200 dark:outline-gray-800 p-2 px-4 rounded-2xl'
+          className='cursor-pointer text-2xl outline-1 bg-background dark:bg-background-dark text-text dark:text-text-dark outline-gray-200 dark:outline-gray-800 p-2 px-4 rounded-2xl'
           onChange={handleUserChange}
           value={userMusicStats.id}
         >
@@ -43,8 +43,8 @@ function Dashboard() {
 
       <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
         {/* User info and Profile - vänster */}
-        <div className='bg-white dark:bg-background-dark flex flex-col items-center justify-start gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px] text-center'>
-          <h1 className='text-2xl font-bold text-text dark:text-text-dark underline'>
+        <div className='bg-background dark:bg-background-dark flex flex-col items-center justify-start gap-4 shadow-md p-6 rounded-2xl   w-1/3 min-w-[250px] text-center'>
+          <h1 className='text-3xl font-bold text-text dark:text-text-dark underline'>
             <Link to={`/profiles/${userMusicStats.id}`}>
               {userMusicStats.name}
             </Link>
@@ -53,7 +53,7 @@ function Dashboard() {
             <img
               src={userMusicStats.profilePicture}
               alt={userMusicStats.name}
-              className='w-20 h-20 rounded-full border border-gray-300 shadow-sm'
+              className='w-20 h-20 rounded-full border border-gray-200 dark:border-gray-800  shadow-sm'
             />
           </Link>
           <p className='text-text-muted dark:text-text-muted-dark text-sm'>
@@ -98,12 +98,15 @@ function Dashboard() {
 
         {/* Top Songs - höger */}
         <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
-          <h2 className='text-text dark:text-text-dark text-2xl font-bold mb-4'>
+          <h2 className='text-2xl font-bold text-text dark:text-text-dark mb-6'>
             Top Songs
           </h2>
           <ul className='grid grid-cols-1 gap-4 '>
             {userMusicStats.topSongs.map((song, index) => (
-              <li key={index} className='border-b last:border-b-0 py-3'>
+              <li
+                key={index}
+                className='border-b last:border-b-0 py-3 border-gray-200 dark:border-gray-800'
+              >
                 <p className='text-text dark:text-text-dark font-medium'>
                   {song.song} -{' '}
                   <span className='text-text-muted dark:text-text-muted-dark'>
