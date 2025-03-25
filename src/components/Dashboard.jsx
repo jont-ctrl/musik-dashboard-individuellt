@@ -44,7 +44,7 @@ function Dashboard() {
       <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
         {/* User info and Profile - vänster */}
         <div className='bg-white dark:bg-background-dark flex flex-col items-center justify-start gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px] text-center'>
-          <h1 className='text-3xl font-bold text-text dark:text-text-dark underline'>
+          <h1 className='text-2xl font-bold text-text dark:text-text-dark underline'>
             <Link to={`/profiles/${userMusicStats.id}`}>
               {userMusicStats.name}
             </Link>
@@ -98,7 +98,7 @@ function Dashboard() {
 
         {/* Top Songs - höger */}
         <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
-          <h2 className='text-text dark:text-text-dark text-xl font-semibold mb-4'>
+          <h2 className='text-text dark:text-text-dark text-2xl font-bold mb-4'>
             Top Songs
           </h2>
           <ul className='grid grid-cols-1 gap-4 '>

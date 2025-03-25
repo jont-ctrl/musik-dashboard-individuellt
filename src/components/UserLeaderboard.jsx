@@ -25,10 +25,10 @@ const UserLeaderboard = ({ usersData }) => {
   }, [usersData]);
 
   return (
-    <div className='max-w-4xl mx-auto p-6'>
-      <h1 className='text-3xl font-bold text-text dark:text-text-dark mb-6'>
+    <div className='max-w-4xl mx-auto'>
+      <h2 className='text-2xl font-bold text-text dark:text-text-dark mb-6'>
         User Streams Leaderboard
-      </h1>
+      </h2>
       {users.length === 0 ? (
         <p className='text-text-muted dark:text-text-muted-dark'>
           No users to display. Check the console for errors.

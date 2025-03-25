@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 export default function NavHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +7,15 @@ export default function NavHeader() {
   function handleDarkMode() {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle('dark');
+    localStorage.setItem('darkMode', !darkMode);
   }
+
+  // On first load get dark mode setting localstorage
+  useEffect(() => {
+    localStorage.getItem('darkMode') === 'true'
+      ? (setDarkMode(true), document.documentElement.classList.add('dark'))
+      : (setDarkMode(false), document.documentElement.classList.remove('dark'));
+  }, []);
 
   // Toggle mobile menu
   const toggleMenu = () => {
