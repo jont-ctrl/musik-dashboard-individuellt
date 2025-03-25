@@ -84,28 +84,28 @@ export default function NavHeader() {
       >
         <ul className='flex flex-col items-center space-y-6 py-6 text-white text-lg font-semibold'>
           <li>
-            <a
-              href='#home'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-200 transform inline-block'
+            <Link
+              to='/'
+              className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href='#stats'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-200 transform inline-block'
+            <Link
+              to='/top-songs'
+              className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
             >
-              Stats
-            </a>
+              Top Songs
+            </Link>
           </li>
           <li>
-            <a
-              href='#profile'
-              className='nav-link hover:text-tertiary hover:scale-110 transition-all duration-200 transform inline-block'
+            <Link
+              to='/profiles'
+              className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
             >
-              Profile
-            </a>
+              Profiles
+            </Link>
           </li>
         </ul>
       </div>

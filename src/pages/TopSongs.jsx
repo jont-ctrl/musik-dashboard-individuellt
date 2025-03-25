@@ -12,7 +12,7 @@ function TopSongs() {
   return (
     <>
       <NavHeader />
-      <div className='flex flex-col items-center py-12'>
+      <div className='flex flex-col items-center py-12 px-8'>
         <h2 className='text-4xl text-primary font-bold mb-8'>Top songs</h2>
         <ul className='list-decimal pl-5 text-text dark:text-text-dark'>
           {sortedSongs.map((songObj, index) => (

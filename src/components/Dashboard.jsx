@@ -25,7 +25,7 @@ function Dashboard() {
   };
 
   return (
-    <main className='bg-background dark:bg-background-dark py-12 max-w-6xl mx-auto  min-h-screen'>
+    <main className='bg-background dark:bg-background-dark py-12 px-8 max-w-6xl mx-auto  min-h-screen'>
       <div className='flex justify-center items-center gap-4 pb-16'>
         <h2 className='text-text dark:text-text-dark'>Users:</h2>
         <select
@@ -43,25 +43,27 @@ function Dashboard() {
 
       <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
         {/* User info and Profile - vänster */}
-        <div className='bg-white dark:bg-background-dark flex flex-col items-center gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px]'>
+        <div className='bg-white dark:bg-background-dark flex flex-col items-center justify-start gap-4  p-6 rounded-2xl shadow-md w-1/3 min-w-[250px] text-center'>
           <h1 className='text-3xl font-bold text-text dark:text-text-dark underline'>
             <Link to={`/profiles/${userMusicStats.id}`}>
               {userMusicStats.name}
             </Link>
           </h1>
-          <img
-            src={userMusicStats.profilePicture}
-            alt={userMusicStats.name}
-            className='w-20 h-20 rounded-full border border-gray-300 shadow-sm'
-          />
+          <Link to={`/profiles/${userMusicStats.id}`}>
+            <img
+              src={userMusicStats.profilePicture}
+              alt={userMusicStats.name}
+              className='w-20 h-20 rounded-full border border-gray-300 shadow-sm'
+            />
+          </Link>
           <p className='text-text-muted dark:text-text-muted-dark text-sm'>
             ID: {userMusicStats.id}
           </p>
           <p className='text-text-muted dark:text-text-muted-dark text-sm'>
-            Email: {userMusicStats.email}
+            <strong>Email:</strong> {userMusicStats.email}
           </p>
           <p className='text-text-muted dark:text-text-muted-dark text-sm'>
-            Location: {userMusicStats.location}
+            <strong>Location:</strong> {userMusicStats.location}
           </p>
         </div>
 
