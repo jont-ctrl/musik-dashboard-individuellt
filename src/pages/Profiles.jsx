@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import NavHeader from '../components/NavHeader';
-import mockData from '../data/mockData.json'; // Adjust the path if necessary
+import InfoTag from '../components/InfoTag';
+import mockData from '../data/mockData.json';
+import BackIcon from '../components/BackIcon';
 import {
   BarChart,
   Bar,
@@ -33,7 +35,9 @@ function Profiles() {
         <div className='max-w-4xl mx-auto'>
           <div className='flex gap-4 items-center justify-center'>
             <button className=' flex justify-center items-center text-4xl '>
-              <Link to='/'>⬅️</Link>
+              <Link to='/'>
+                <BackIcon />
+              </Link>
             </button>
             <h1 className=' text-text dark:text-text-dark text-4xl font-bold '>
               {user.name}
@@ -52,7 +56,20 @@ function Profiles() {
               <strong>Location:</strong> {user.location}
             </p>
 
-            <h2 className=' flex justify-center text-text dark:text-text-dark text-2xl font-bold pt-8'>
+            <div className='flex flex-col gap-4'>
+              <h3 className='flex justify-center text-text dark:text-text-dark font-semibold'>
+                Favorite genres:
+              </h3>
+              <ul className='flex flex-wrap gap-4 justify-center'>
+                {user.favoriteGenre.map((genre, index) => (
+                  <li key={index}>
+                    <InfoTag name={genre} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <h2 className=' flex justify-center text-text dark:text-text-dark text-2xl font-bold pt-16'>
               Total streams: {user.totalStreams}
             </h2>
 

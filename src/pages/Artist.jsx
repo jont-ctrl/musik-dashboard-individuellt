@@ -4,13 +4,13 @@ import lastFMKey from '../data/keys';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import BackIcon from '../components/BackIcon';
+import InfoTag from '../components/InfoTag';
 
 function Artist() {
   const { artistId } = useParams();
 
   const [artistBio, setArtistBio] = useState(null);
-  const [artistTopSongs, setArtistTopSongs] = useState('');
-  const [artistImg, setArtistImg] = useState(null);
 
   useEffect(() => {
     async function getBio(artist) {
@@ -50,7 +50,9 @@ function Artist() {
           {/* Header Section */}
           <div className='flex gap-4 items-center justify-center'>
             <button className='flex justify-center items-center text-4xl'>
-              <Link to='/artists'>⬅️</Link>
+              <Link to='/artists'>
+                <BackIcon />
+              </Link>
             </button>
             <h1 className='text-4xl text-text dark:text-text-dark font-bold'>
               {artistBio.artist.name}
@@ -60,7 +62,7 @@ function Artist() {
           {/* Artist Image */}
           <img
             className='rounded-2xl w-full max-w-md object-cover'
-            src={artistImg || 'https://picsum.photos/400'}
+            src={'https://picsum.photos/400'}
             alt={`${artistBio.artist.name} image`}
           />
 
@@ -88,11 +90,8 @@ function Artist() {
             </h4>
             <ul className='flex flex-wrap gap-4 justify-center'>
               {artistBio.artist.similar.artist.map((artist) => (
-                <li
-                  className='bg-secondary dark:bg-secondary-dark text-text dark:text-text-dark px-4 py-2 rounded-lg shadow-sm text-sm'
-                  key={artist.name}
-                >
-                  {artist.name}
+                <li key={artist.name}>
+                  <InfoTag name={artist.name} />
                 </li>
               ))}
             </ul>

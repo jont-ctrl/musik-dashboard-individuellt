@@ -52,7 +52,8 @@
           "artist": "The Weeknd ft. Rosalía",
           "streams": 310
         }
-      ]
+      ],
+      "favoriteGenre": ["Pop", "R&B", "Indie"]
     },
     {
       "id": 2,
@@ -106,7 +107,8 @@
           "artist": "The Weeknd ft. Rosalía",
           "streams": 440
         }
-      ]
+      ],
+      "favoriteGenre": ["Rock", "Electronic", "Jazz"]
     },
     {
       "id": 3,
@@ -160,7 +162,8 @@
           "artist": "The Weeknd ft. Rosalía",
           "streams": 350
         }
-      ]
+      ],
+      "favoriteGenre": ["Hip-Hop", "Country", "Blues"]
     },
     {
       "id": 4,
@@ -214,7 +217,8 @@
           "artist": "The Weeknd ft. Rosalía",
           "streams": 540
         }
-      ]
+      ],
+      "favoriteGenre": ["Classical", "Reggae", "Folk"]
     },
     {
       "id": 5,
@@ -252,7 +256,8 @@
         { "song": "Good 4 U", "artist": "Olivia Rodrigo", "streams": 620 },
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 600 },
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 580 }
-      ]
+      ],
+      "favoriteGenre": ["Metal", "Pop", "Alternative"]
     },
     {
       "id": 6,
@@ -286,7 +291,8 @@
           "streams": 640
         },
         { "song": "Good 4 U", "artist": "Olivia Rodrigo", "streams": 630 }
-      ]
+      ],
+      "favoriteGenre": ["Indie", "Electronic", "Soul"]
     },
     {
       "id": 7,
@@ -316,7 +322,8 @@
         { "song": "Save Your Tears", "artist": "The Weeknd", "streams": 490 },
         { "song": "Shivers", "artist": "Ed Sheeran", "streams": 470 },
         { "song": "Kiss Me More", "artist": "Doja Cat ft. SZA", "streams": 460 }
-      ]
+      ],
+      "favoriteGenre": ["Pop", "Dance", "K-Pop"]
     },
     {
       "id": 8,
@@ -354,7 +361,8 @@
         { "song": "Good 4 U", "artist": "Olivia Rodrigo", "streams": 680 },
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 670 },
         { "song": "Kiss Me More", "artist": "Doja Cat ft. SZA", "streams": 660 }
-      ]
+      ],
+      "favoriteGenre": ["R&B", "Funk", "Disco"]
     },
     {
       "id": 9,
@@ -384,7 +392,8 @@
         { "song": "Good 4 U", "artist": "Olivia Rodrigo", "streams": 540 },
         { "song": "Shivers", "artist": "Ed Sheeran", "streams": 520 },
         { "song": "Bad Habits", "artist": "Ed Sheeran", "streams": 510 }
-      ]
+      ],
+      "favoriteGenre": ["Latin", "Trap", "EDM"]
     },
     {
       "id": 10,
@@ -422,7 +431,8 @@
           "streams": 660
         },
         { "song": "Shivers", "artist": "Ed Sheeran", "streams": 650 }
-      ]
+      ],
+      "favoriteGenre": ["Punk", "Rock", "Synthwave"]
     }
   ]
 }

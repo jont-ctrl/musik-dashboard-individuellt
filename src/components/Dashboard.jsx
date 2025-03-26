@@ -11,6 +11,7 @@ import {
 } from 'recharts';
 import UserLeaderboard from './UserLeaderboard';
 import { useState } from 'react';
+import InfoTag from './InfoTag';
 
 function Dashboard() {
   const [userMusicStats, setUserMusicStats] = useState(mockData.users[8]);
@@ -72,6 +73,16 @@ function Dashboard() {
           <p className='text-text-muted dark:text-text-muted-dark text-sm'>
             <strong>Location:</strong> {userMusicStats.location}
           </p>
+          <h3 className='text-text dark:text-text-dark font-semibold'>
+            Favorite genres:
+          </h3>
+          <ul className='flex flex-wrap gap-4 justify-center'>
+            {userMusicStats.favoriteGenre.map((genre, index) => (
+              <li key={index}>
+                <InfoTag name={genre} />
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Monthly streams - höger */}
