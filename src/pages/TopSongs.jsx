@@ -1,6 +1,8 @@
 import Footer from '../components/Footer';
 import NavHeader from '../components/NavHeader';
 import mockData from '../data/mockData.json';
+import lastFMKey from '../data/keys';
+import { useEffect } from 'react';
 
 function TopSongs() {
   // Samla alla låtar från alla användare i en enda array
@@ -8,6 +10,22 @@ function TopSongs() {
 
   // Sortera låtarna från mest till minst streams
   const sortedSongs = allSongs.sort((a, b) => b.streams - a.streams);
+
+  useEffect(() => {
+    async function getMusicArtist(artist) {
+      try {
+        const response = await fetch(
+          `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${lastFMKey}&artist=Cher&album=Believe&format=json`
+        );
+
+        const data = await response.json();
+        console.log('YOOO:', data);
+      } catch (error) {
+        console.error('Error fetching:', error);
+      }
+    }
+    getMusicArtist();
+  }, []);
 
   return (
     <>
