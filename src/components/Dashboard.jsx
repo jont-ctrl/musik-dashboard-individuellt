@@ -53,7 +53,7 @@ function Dashboard() {
       <div className='flex justify-center gap-6 flex-wrap md:flex-nowrap'>
         {/* User info and Profile - vänster */}
         <div className='bg-background dark:bg-background-dark flex flex-col items-center justify-start gap-4 shadow-md p-6 rounded-2xl   w-1/3 min-w-[250px] text-center'>
-          <h1 className='text-3xl font-bold text-primary dark:text-primary-dark underline'>
+          <h1 className='text-3xl font-bold text-primary dark:text-secondary underline'>
             <Link to={`/profiles/${userMusicStats.id}`}>
               {userMusicStats.name}
             </Link>
@@ -118,7 +118,7 @@ function Dashboard() {
               >
                 <p className='text-text dark:text-text-dark font-medium'>
                   {song.song} -{' '}
-                  <span className='text-text-muted dark:text-text-muted-dark'>
+                  <span className='text-text-muted dark:text-text-muted-dark underline'>
                     <Link to={`/artists/${song.artist}`}>{song.artist}</Link>
                   </span>
                 </p>

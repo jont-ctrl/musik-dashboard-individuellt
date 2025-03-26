@@ -89,7 +89,7 @@ function Profiles() {
                       {song.song} -{' '}
                       <Link
                         to={`/artists/${song.artist}`}
-                        className='text-primary dark:text-primary-dark underline'
+                        className='text-primary dark:text-secondary underline'
                       >
                         {song.artist}
                       </Link>

@@ -98,7 +98,7 @@ function Artist() {
 
           {/* External Link */}
           <a
-            className='underline text-primary dark:text-primary-dark text-lg'
+            className='underline text-primary dark:text-secondary text-lg'
             href={artistBio.artist.url}
             target='_blank'
             rel='noreferrer'

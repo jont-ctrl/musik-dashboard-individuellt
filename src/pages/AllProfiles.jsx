@@ -23,7 +23,12 @@ function AllProfiles() {
             </Link>
             <div className='flex-grow '>
               <p className='flex gap-2 text-lg font-medium text-text dark:text-text-dark'>
-                <Link to={`/profiles/${user.id}`}>{user.name}</Link>
+                <Link
+                  to={`/profiles/${user.id}`}
+                  className='text-primary dark:text-secondary'
+                >
+                  {user.name}
+                </Link>
                 <span className='text-text-muted dark:text-text-muted-dark'>
                   ({user.location})
                 </span>

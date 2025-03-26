@@ -70,7 +70,7 @@ function TopSongs() {
                 -{' '}
                 <Link
                   to={`/artists/${songObj.artist.name}`}
-                  className='text-primary dark:text-primary-dark underline'
+                  className='text-primary dark:text-secondary underline'
                 >
                   {songObj.artist.name}
                 </Link>
