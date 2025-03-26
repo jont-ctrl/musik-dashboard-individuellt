@@ -30,6 +30,8 @@ function Artist() {
     getBio(artistId);
   }, []);
 
+  const uniqueImageUrl = `https://picsum.photos/400?random=${new Date().getTime()}`;
+
   if (!artistBio) {
     // Render a loading message while the data is being fetched
     return (
@@ -62,7 +64,7 @@ function Artist() {
           {/* Artist Image */}
           <img
             className='rounded-2xl w-full max-w-md object-cover'
-            src={'https://picsum.photos/400'}
+            src={uniqueImageUrl}
             alt={`${artistBio.artist.name} image`}
           />
 
