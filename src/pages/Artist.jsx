@@ -47,16 +47,16 @@ function Artist() {
   return (
     <>
       <NavHeader />
-      <main className='p-6 min-h-screen'>
+      <main className='py-6  sm:p-6 min-h-screen'>
         <div className='py-12 px-8 flex flex-col items-center justify-center gap-8 rounded-lg shadow-md bg-background dark:bg-background-dark max-w-4xl mx-auto'>
           {/* Header Section */}
-          <div className='flex gap-4 items-center justify-center'>
+          <div className='flex flex-wrap gap-4 items-center justify-center'>
             <button className='flex justify-center items-center text-4xl'>
               <Link to='/artists'>
                 <BackIcon />
               </Link>
             </button>
-            <h1 className='text-4xl text-text dark:text-text-dark font-bold'>
+            <h1 className='text-4xl text-text dark:text-text-dark font-bold text-center'>
               {artistBio.artist.name}
             </h1>
           </div>
@@ -81,7 +81,7 @@ function Artist() {
           </div>
 
           {/* Bio Section */}
-          <p className='text-text dark:text-text-dark max-w-2xl text-center leading-relaxed'>
+          <p className='text-text dark:text-text-dark w-full max-w-2xl px-4 text-center leading-relaxed break-words'>
             {artistBio.artist.bio.summary}
           </p>
 

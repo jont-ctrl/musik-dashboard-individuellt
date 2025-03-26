@@ -31,15 +31,15 @@ function Profiles() {
   return (
     <>
       <NavHeader />
-      <main className='p-6'>
+      <main className='py-6  sm:p-6'>
         <div className='max-w-4xl mx-auto'>
-          <div className='flex gap-4 items-center justify-center'>
-            <button className=' flex justify-center items-center text-4xl '>
+          <div className='flex flex-wrap gap-4 items-center justify-center'>
+            <button className=' flex  justify-center items-center text-4xl '>
               <Link to='/'>
                 <BackIcon />
               </Link>
             </button>
-            <h1 className=' text-text dark:text-text-dark text-4xl font-bold '>
+            <h1 className=' text-text dark:text-text-dark text-4xl font-bold text-center '>
               {user.name}
             </h1>
           </div>
