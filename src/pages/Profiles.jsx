@@ -52,8 +52,12 @@ function Profiles() {
               <strong>Location:</strong> {user.location}
             </p>
 
+            <h2 className=' flex justify-center text-text dark:text-text-dark text-2xl font-bold pt-8'>
+              Total streams: {user.totalStreams}
+            </h2>
+
             <div className='mt-6'>
-              <h2 className='flex justify-center text-text dark:text-text-dark text-2xl font-bold mb-4'>
+              <h2 className='flex justify-center text-text dark:text-text-dark text-2xl font-semibold mb-4'>
                 Monthly Streams
               </h2>
               <div className='h-96'>
