@@ -77,7 +77,7 @@ function TopSongs() {
                 {}
               </p>
               <p className='text-text-muted dark:text-text-muted-dark'>
-                Streams: {songObj.listeners}
+                Streams: {Number(songObj.playcount).toLocaleString()}
               </p>
             </li>
           ))}

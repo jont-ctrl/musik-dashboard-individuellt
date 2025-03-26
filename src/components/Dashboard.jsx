@@ -65,9 +65,7 @@ function Dashboard() {
               className='w-20 h-20 rounded-full border border-gray-200 dark:border-gray-800  shadow-sm'
             />
           </Link>
-          <p className='text-text-muted dark:text-text-muted-dark text-sm'>
-            ID: {userMusicStats.id}
-          </p>
+
           <p className='text-text-muted dark:text-text-muted-dark text-sm'>
             <strong>Email:</strong> {userMusicStats.email}
           </p>
@@ -118,7 +116,7 @@ function Dashboard() {
               >
                 <p className='text-text dark:text-text-dark font-medium'>
                   {song.song} -{' '}
-                  <span className='text-text-muted dark:text-text-muted-dark underline'>
+                  <span className='text-primary dark:text-secondary underline'>
                     <Link to={`/artists/${song.artist}`}>{song.artist}</Link>
                   </span>
                 </p>

@@ -67,10 +67,12 @@ function Artist() {
           {/* Stats Section */}
           <div className='flex flex-col items-center gap-4'>
             <h2 className='text-text-muted dark:text-text-muted-dark text-lg'>
-              <strong>Listeners:</strong> {artistBio.artist.stats.listeners}
+              <strong>Listeners:</strong>{' '}
+              {Number(artistBio.artist.stats.listeners).toLocaleString()}
             </h2>
             <h2 className='text-text-muted dark:text-text-muted-dark text-lg'>
-              <strong>Play count:</strong> {artistBio.artist.stats.playcount}
+              <strong>Play count:</strong>{' '}
+              {Number(artistBio.artist.stats.playcount).toLocaleString()}
             </h2>
           </div>
 
@@ -81,7 +83,7 @@ function Artist() {
 
           {/* Similar Artists Section */}
           <div className='w-full'>
-            <h4 className='font-semibold text-lg text-center mb-4'>
+            <h4 className='font-semibold text-lg text-center mb-4 text-text dark:text-text-dark'>
               Similar Artists:
             </h4>
             <ul className='flex flex-wrap gap-4 justify-center'>
