@@ -3,6 +3,7 @@ import NavHeader from '../components/NavHeader';
 import lastFMKey from '../data/keys';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Artist() {
   const { artistId } = useParams();
@@ -45,23 +46,44 @@ function Artist() {
   return (
     <>
       <NavHeader />
-      <div className='py-12 px-8 flex flex-col items-center justify-center gap-8'>
-        <h1 className='text-4xl text-primary dark:text-primary-dark font-bold mb-8'>
-          {artistBio.artist.name}
-        </h1>
-        <img className='rounded-2xl' src='https://picsum.photos/400' alt='' />
-        <p className='text-text dark:text-text-dark max-w-2xl'>
-          {artistBio.artist.bio.summary}
-        </p>
-        <a
-          className='underline text-primary dark:text-text-dark pb-16'
-          href={artistBio.artist.url}
-          target='_blank'
-          rel='noreferrer'
-        >
-          {artistBio.artist.name} LastFM
-        </a>
-      </div>
+      <main className='p-6'>
+        <div className='py-12 px-8 flex flex-col items-center justify-center gap-8 rounded-lg shadow-md max-w-4xl mx-auto'>
+          <div className='flex gap-4 items-center justify-center'>
+            <button className=' flex justify-center items-center text-4xl '>
+              <Link to='/artists'>⬅️</Link>
+            </button>
+            <h1 className='text-4xl text-text dark:text-text-dark font-bold '>
+              {artistBio.artist.name}
+            </h1>
+          </div>
+          <img className='rounded-2xl' src='https://picsum.photos/400' alt='' />
+          <h2 className='text-text-muted dark:text-text-muted-dark'>
+            <strong>Listeners:</strong> {artistBio.artist.stats.listeners}
+          </h2>
+          <h2 className='text-text-muted dark:text-text-muted-dark'>
+            <strong>Play count:</strong> {artistBio.artist.stats.playcount}
+          </h2>
+          <p className='text-text dark:text-text-dark max-w-1xl'>
+            {artistBio.artist.bio.summary}
+          </p>
+          <h4 className='font-semibold'>Similar artists:</h4>
+          <ul className='flex gap-4'>
+            {artistBio.artist.similar.artist.map((artist) => (
+              <li className='' key={artist.name}>
+                {artist.name}
+              </li>
+            ))}
+          </ul>
+          <a
+            className='underline text-text dark:text-dark '
+            href={artistBio.artist.url}
+            target='_blank'
+            rel='noreferrer'
+          >
+            {artistBio.artist.name} LastFM
+          </a>
+        </div>
+      </main>
 
       <Footer />
     </>

@@ -119,7 +119,7 @@ function Dashboard() {
                 <p className='text-text dark:text-text-dark font-medium'>
                   {song.song} -{' '}
                   <span className='text-text-muted dark:text-text-muted-dark'>
-                    {song.artist}
+                    <Link to={`/artists/${song.artist}`}>{song.artist}</Link>
                   </span>
                 </p>
                 <p className='text-text-muted dark:text-text-muted-dark'>
