@@ -85,9 +85,14 @@ function Profiles() {
                     key={song.song}
                     className='bg-background dark:bg-background-dark p-4 rounded-lg shadow-sm'
                   >
-                    <p className='text-lg font-medium'>
+                    <p className='text-lg font-medium '>
                       {song.song} -{' '}
-                      <Link to={`/artists/${song.artist}`}>{song.artist}</Link>
+                      <Link
+                        to={`/artists/${song.artist}`}
+                        className='text-primary dark:text-primary-dark underline'
+                      >
+                        {song.artist}
+                      </Link>
                     </p>
                     <p className='text-sm text-text-muted dark:text-text-muted-dark'>
                       Streams: {song.streams}

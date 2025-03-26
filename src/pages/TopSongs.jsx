@@ -68,7 +68,10 @@ function TopSongs() {
                   {index + 1}. {songObj.name}
                 </strong>{' '}
                 -{' '}
-                <Link to={`/artists/${songObj.artist.name}`}>
+                <Link
+                  to={`/artists/${songObj.artist.name}`}
+                  className='text-primary dark:text-primary-dark underline'
+                >
                   {songObj.artist.name}
                 </Link>
                 {}
