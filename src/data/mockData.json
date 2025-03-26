@@ -74,6 +74,7 @@
         { "month": "November", "streams": 210 },
         { "month": "December", "streams": 230 }
       ],
+      "totalStreams": 1880,
       "topSongs": [
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 600 },
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 580 },
@@ -127,6 +128,7 @@
         { "month": "November", "streams": 170 },
         { "month": "December", "streams": 180 }
       ],
+      "totalStreams": 1575,
       "topSongs": [
         { "song": "Save Your Tears", "artist": "The Weeknd", "streams": 480 },
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 460 },
@@ -180,6 +182,7 @@
         { "month": "November", "streams": 230 },
         { "month": "December", "streams": 240 }
       ],
+      "totalStreams": 2445,
       "topSongs": [
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 700 },
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 680 },
@@ -233,6 +236,7 @@
         { "month": "November", "streams": 230 },
         { "month": "December", "streams": 220 }
       ],
+      "totalStreams": 2480,
       "topSongs": [
         {
           "song": "Stay",
@@ -270,6 +274,7 @@
         { "month": "November", "streams": 210 },
         { "month": "December", "streams": 215 }
       ],
+      "totalStreams": 1840,
       "topSongs": [
         { "song": "Save Your Tears", "artist": "The Weeknd", "streams": 700 },
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 680 },
@@ -303,6 +308,7 @@
         { "month": "November", "streams": 195 },
         { "month": "December", "streams": 210 }
       ],
+      "totalStreams": 1780,
       "topSongs": [
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 550 },
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 530 },
@@ -332,6 +338,7 @@
         { "month": "November", "streams": 250 },
         { "month": "December", "streams": 240 }
       ],
+      "totalStreams": 2690,
       "topSongs": [
         {
           "song": "Montero (Call Me By Your Name)",
@@ -369,6 +376,7 @@
         { "month": "November", "streams": 220 },
         { "month": "December", "streams": 230 }
       ],
+      "totalStreams": 1870,
       "topSongs": [
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 580 },
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 570 },
@@ -398,6 +406,7 @@
         { "month": "November", "streams": 235 },
         { "month": "December", "streams": 230 }
       ],
+      "totalStreams": 2185,
       "topSongs": [
         {
           "song": "Stay",
