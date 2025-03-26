@@ -18,7 +18,7 @@ function TopSongs() {
           {sortedSongs.map((songObj, index) => (
             <li
               key={index}
-              className='py-2 border-b border-gray-200 dark:border-gray-800'
+              className='py-2 border-b border-gray-200 dark:border-gray-800  '
             >
               <span className='font-semibold'>{songObj.song}</span> -{' '}
               {songObj.artist} ({songObj.streams} streams)

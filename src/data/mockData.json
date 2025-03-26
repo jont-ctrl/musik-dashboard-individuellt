@@ -20,6 +20,7 @@
         { "month": "November", "streams": 195 },
         { "month": "December", "streams": 210 }
       ],
+      "totalStreams": 1820,
       "topSongs": [
         { "song": "Blinding Lights", "artist": "The Weeknd", "streams": 500 },
         { "song": "Levitating", "artist": "Dua Lipa", "streams": 450 },
