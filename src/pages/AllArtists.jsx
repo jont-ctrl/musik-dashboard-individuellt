@@ -35,7 +35,7 @@ function allArtists() {
           {fetchTopSongs.map((songObj, index) => (
             <li
               key={index}
-              className=' text-lg  text-text dark:text-text-dark underline'
+              className=' text-lg  text-primary dark:text-primary-dark underline'
             >
               <Link to={`/artists/${songObj.artist.name}`}>
                 {songObj.artist.name}

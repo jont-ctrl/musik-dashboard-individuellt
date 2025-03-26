@@ -42,49 +42,71 @@ function Artist() {
       </>
     );
   }
-
   return (
     <>
       <NavHeader />
-      <main className='p-6'>
-        <div className='py-12 px-8 flex flex-col items-center justify-center gap-8 rounded-lg shadow-md max-w-4xl mx-auto'>
+      <main className='p-6 min-h-screen'>
+        <div className='py-12 px-8 flex flex-col items-center justify-center gap-8 rounded-lg shadow-md bg-background dark:bg-background-dark max-w-4xl mx-auto'>
+          {/* Header Section */}
           <div className='flex gap-4 items-center justify-center'>
-            <button className=' flex justify-center items-center text-4xl '>
+            <button className='flex justify-center items-center text-4xl'>
               <Link to='/artists'>⬅️</Link>
             </button>
-            <h1 className='text-4xl text-text dark:text-text-dark font-bold '>
+            <h1 className='text-4xl text-text dark:text-text-dark font-bold'>
               {artistBio.artist.name}
             </h1>
           </div>
-          <img className='rounded-2xl' src='https://picsum.photos/400' alt='' />
-          <h2 className='text-text-muted dark:text-text-muted-dark'>
-            <strong>Listeners:</strong> {artistBio.artist.stats.listeners}
-          </h2>
-          <h2 className='text-text-muted dark:text-text-muted-dark'>
-            <strong>Play count:</strong> {artistBio.artist.stats.playcount}
-          </h2>
-          <p className='text-text dark:text-text-dark max-w-1xl'>
+
+          {/* Artist Image */}
+          <img
+            className='rounded-2xl w-full max-w-md object-cover'
+            src={artistImg || 'https://picsum.photos/400'}
+            alt={`${artistBio.artist.name} image`}
+          />
+
+          {/* Stats Section */}
+          <div className='flex flex-col items-center gap-4'>
+            <h2 className='text-text-muted dark:text-text-muted-dark text-lg'>
+              <strong>Listeners:</strong> {artistBio.artist.stats.listeners}
+            </h2>
+            <h2 className='text-text-muted dark:text-text-muted-dark text-lg'>
+              <strong>Play count:</strong> {artistBio.artist.stats.playcount}
+            </h2>
+          </div>
+
+          {/* Bio Section */}
+          <p className='text-text dark:text-text-dark max-w-2xl text-center leading-relaxed'>
             {artistBio.artist.bio.summary}
           </p>
-          <h4 className='font-semibold'>Similar artists:</h4>
-          <ul className='flex gap-4'>
-            {artistBio.artist.similar.artist.map((artist) => (
-              <li className='' key={artist.name}>
-                {artist.name}
-              </li>
-            ))}
-          </ul>
+
+          {/* Similar Artists Section */}
+          <div className='w-full'>
+            <h4 className='font-semibold text-lg text-center mb-4'>
+              Similar Artists:
+            </h4>
+            <ul className='flex flex-wrap gap-4 justify-center'>
+              {artistBio.artist.similar.artist.map((artist) => (
+                <li
+                  className='bg-secondary dark:bg-secondary-dark text-text dark:text-text-dark px-4 py-2 rounded-lg shadow-sm text-sm'
+                  key={artist.name}
+                >
+                  {artist.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* External Link */}
           <a
-            className='underline text-text dark:text-dark '
+            className='underline text-primary dark:text-primary-dark text-lg'
             href={artistBio.artist.url}
             target='_blank'
             rel='noreferrer'
           >
-            {artistBio.artist.name} LastFM
+            {artistBio.artist.name} on LastFM
           </a>
         </div>
       </main>
-
       <Footer />
     </>
   );
