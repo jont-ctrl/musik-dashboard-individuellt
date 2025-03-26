@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 export default function NavHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -23,51 +24,71 @@ export default function NavHeader() {
   };
 
   return (
-    <header className='bg-primary dark:bg-primary-dark text-white py-6 px-8 sticky top-0 z-50 transition-all duration-500 ease-in-out  rounded-bl-xl rounded-br-xl'>
-      <nav className='flex justify-between items-center'>
+    <header
+      className='bg-primary dark:bg-primary-dark text-white py-6 px-8 sticky top-0 z-50 transition-all duration-500 ease-in-out rounded-bl-xl rounded-br-xl'
+      role='banner'
+    >
+      <nav
+        className='flex justify-between items-center'
+        aria-label='Main navigation'
+      >
         {/* Logo (klickbar länk till startsidan) */}
         <Link
           to='/'
           className='text-4xl font-extrabold text-white hover:text-tertiary active:scale-90 transition-all duration-200 transform hover:scale-110'
+          aria-label='Go to homepage'
         >
           BeatStats
         </Link>
 
         {/* Desktop Menu */}
-        <ul className='hidden md:flex space-x-12 text-lg text-white font-medium'>
-          <li>
+        <ul
+          className='hidden md:flex space-x-12 text-lg text-white font-medium'
+          role='menu'
+        >
+          <li role='menuitem'>
             <Link
               to='/'
               className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
+              aria-label='Go to Home page'
             >
               Home
             </Link>
           </li>
-          <li>
+          <li role='menuitem'>
             <Link
               to='/top-songs'
               className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
+              aria-label='Go to Top Songs page'
             >
               Top Songs
             </Link>
           </li>
-          <li>
+          <li role='menuitem'>
             <Link
               to='/profiles'
               className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
+              aria-label='Go to Profiles page'
             >
               Profiles
             </Link>
           </li>
         </ul>
+
+        {/* Dark Mode Toggle */}
         <button
           className='flex items-center justify-center cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'
           onClick={handleDarkMode}
+          aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         >
           {darkMode ? (
-            <span className='material-icons'>light_mode</span>
+            <span className='material-icons' aria-hidden='true'>
+              light_mode
+            </span>
           ) : (
-            <span className='material-icons'>dark_mode</span>
+            <span className='material-icons' aria-hidden='true'>
+              dark_mode
+            </span>
           )}
         </button>
 
@@ -75,8 +96,8 @@ export default function NavHeader() {
         <button
           onClick={toggleMenu}
           className='md:hidden flex flex-col items-center space-y-2'
-          aria-expanded={isOpen ? 'true' : 'false'} // Accessibility
-          aria-label='Toggle menu'
+          aria-expanded={isOpen ? 'true' : 'false'}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
           <span className='w-7 h-0.5 bg-white transform transition-all duration-200'></span>
           <span className='w-7 h-0.5 bg-white transform transition-all duration-200'></span>
@@ -89,28 +110,35 @@ export default function NavHeader() {
         className={`${
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } md:hidden overflow-hidden bg-primary transition-all duration-500 ease-in-out`}
+        aria-hidden={!isOpen}
       >
-        <ul className='flex flex-col items-center space-y-6 py-6 text-white text-lg font-semibold'>
-          <li>
+        <ul
+          className='flex flex-col items-center space-y-6 py-6 text-white text-lg font-semibold'
+          role='menu'
+        >
+          <li role='menuitem'>
             <Link
               to='/'
               className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
+              aria-label='Go to Home page'
             >
               Home
             </Link>
           </li>
-          <li>
+          <li role='menuitem'>
             <Link
               to='/top-songs'
               className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
+              aria-label='Go to Top Songs page'
             >
               Top Songs
             </Link>
           </li>
-          <li>
+          <li role='menuitem'>
             <Link
               to='/profiles'
               className='nav-link hover:text-tertiary hover:scale-110 active:scale-90 transition-all duration-200 transform inline-block'
+              aria-label='Go to Profiles page'
             >
               Profiles
             </Link>
