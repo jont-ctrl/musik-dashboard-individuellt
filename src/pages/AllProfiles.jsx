@@ -8,7 +8,7 @@ function AllProfiles() {
     <>
       <NavHeader />
       <div className='py-12 px-8 flex flex-col items-center justify-center'>
-        <h2 className='text-4xl text-primary font-bold mb-8'>All profiles</h2>
+        <h1 className='text-4xl text-primary font-bold mb-8'>All profiles</h1>
         {mockData.users.map((user) => (
           <div
             key={user.id}

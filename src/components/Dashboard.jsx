@@ -87,9 +87,9 @@ function Dashboard() {
 
         {/* Monthly streams - höger */}
         <div className='bg-white dark:bg-background-dark p-6 rounded-2xl shadow-md w-2/3 min-w-[300px]'>
-          <p className='flex justify-center text-text dark:text-text-dark text-2xl font-bold mb-4'>
+          <h2 className='flex justify-center text-text dark:text-text-dark text-2xl font-bold mb-4'>
             Monthly streams this year:
-          </p>
+          </h2>
           <div className='h-96'>
             <ResponsiveContainer width={'100%'} height={'100%'}>
               <BarChart data={userMusicStats.monthlyStreams}>

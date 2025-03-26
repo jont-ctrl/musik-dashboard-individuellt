@@ -52,9 +52,9 @@ function TopSongs() {
     <>
       <NavHeader />
       <div className='flex flex-col items-center justify-center py-12 px-8'>
-        <h2 className='text-4xl text-primary font-bold mb-8'>
+        <h1 className='text-4xl text-primary font-bold mb-8'>
           Top Tracks Chart
-        </h2>
+        </h1>
 
         <ul className='grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center list-decimal pl-5 text-text dark:text-text-dark'>
           {fetchTopSongs.map((songObj, index) => (
