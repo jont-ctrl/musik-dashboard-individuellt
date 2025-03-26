@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import ErrorPage from './pages/ErrorPage';
 import Profiles from './pages/Profiles';
 import AllProfiles from './pages/AllProfiles';
+import AllArtists from './pages/AllArtists';
+import Artist from './pages/Artist';
 import TopSongs from './pages/TopSongs';
 
 const router = createBrowserRouter([
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
   {
     path: '/top-songs',
     element: <TopSongs />,
+  },
+  {
+    path: '/artists',
+    element: <AllArtists />,
+  },
+  {
+    path: '/artists/:artistId',
+    element: <Artist />,
   },
 ]);
 

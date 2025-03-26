@@ -3,6 +3,7 @@ import NavHeader from '../components/NavHeader';
 import mockData from '../data/mockData.json';
 import lastFMKey from '../data/keys';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function TopSongs() {
   const [musicImg, setMusicImg] = useState();
@@ -66,7 +67,11 @@ function TopSongs() {
                 <strong>
                   {index + 1}. {songObj.name}
                 </strong>{' '}
-                - {songObj.artist.name}
+                -{' '}
+                <Link to={`/artists/${songObj.artist.name}`}>
+                  {songObj.artist.name}
+                </Link>
+                {}
               </p>
               <p className='text-text-muted dark:text-text-muted-dark'>
                 Streams: {songObj.listeners}
