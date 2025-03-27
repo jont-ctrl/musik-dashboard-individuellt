@@ -121,7 +121,7 @@ export default function NavHeader() {
       <div
         className={`${
           isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } md:hidden overflow-hidden bg-primary transition-all duration-500 ease-in-out`}
+        } md:hidden overflow-hidden bg-primary dark:bg-primary-dark transition-all duration-500 ease-in-out`}
         aria-hidden={!isOpen}
       >
         <ul
