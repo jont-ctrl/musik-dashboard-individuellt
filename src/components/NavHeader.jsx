@@ -91,7 +91,7 @@ export default function NavHeader() {
             {userID && (
               <Link
                 to={`/profiles/${userID}`}
-                className='text-primary dark:text-secondary text-lg font-medium'
+                className='text-secondary text-lg font-medium'
                 aria-label={`Logged in as ${userName}`}
               >
                 {userName}
@@ -173,7 +173,7 @@ export default function NavHeader() {
             {userID && (
               <Link
                 to={`/profiles/${userID}`}
-                className='text-primary dark:text-secondary text-lg font-medium'
+                className='text-secondary  text-lg font-medium'
                 aria-label={`Logged in as ${userName}`}
               >
                 {userName}
