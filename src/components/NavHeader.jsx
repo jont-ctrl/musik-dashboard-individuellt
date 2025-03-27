@@ -78,7 +78,7 @@ export default function NavHeader() {
           </li>
         </ul>
 
-        <p>{userName}</p>
+        <p aria-label={`Logged in as ${userName}`}>{userName}</p>
         {/* Dark Mode Toggle */}
         <button
           className='flex items-center justify-center cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'
