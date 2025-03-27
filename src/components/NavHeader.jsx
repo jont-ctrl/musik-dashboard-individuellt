@@ -76,9 +76,17 @@ export default function NavHeader() {
               Profiles
             </Link>
           </li>
+          {/* Add username for desktop */}
+          <li role='menuitem'>
+            <p
+              className='text-white text-lg font-medium'
+              aria-label={`Logged in as ${userName}`}
+            >
+              {userName}
+            </p>
+          </li>
         </ul>
 
-        <p aria-label={`Logged in as ${userName}`}>{userName}</p>
         {/* Dark Mode Toggle */}
         <button
           className='flex items-center justify-center cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'
@@ -146,6 +154,15 @@ export default function NavHeader() {
             >
               Profiles
             </Link>
+          </li>
+          {/* Add username for mobile */}
+          <li role='menuitem'>
+            <p
+              className='text-white text-lg font-medium'
+              aria-label={`Logged in as ${userName}`}
+            >
+              {userName}
+            </p>
           </li>
         </ul>
       </div>
