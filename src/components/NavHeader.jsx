@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { HelloContext } from '../context/HelloContext';
 
 export default function NavHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
+  const { userName, setUserName } = useContext(HelloContext);
 
   function handleDarkMode() {
     setDarkMode(!darkMode);
@@ -75,6 +78,7 @@ export default function NavHeader() {
           </li>
         </ul>
 
+        <p>{userName}</p>
         {/* Dark Mode Toggle */}
         <button
           className='flex items-center justify-center cursor-pointer hover:scale-110 active:scale-90 transition-all duration-200 transform'

@@ -10,10 +10,13 @@ import {
   Legend,
 } from 'recharts';
 import UserLeaderboard from './UserLeaderboard';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { HelloContext } from '../context/HelloContext';
 import InfoTag from './InfoTag';
 
 function Dashboard() {
+  const { userName, setUserName } = useContext(HelloContext);
+
   const [userMusicStats, setUserMusicStats] = useState(mockData.users[8]);
 
   // Function to handle user selection from the dropdown
@@ -23,6 +26,8 @@ function Dashboard() {
       (user) => user.id === selectedUserId
     );
     setUserMusicStats(selectedUser);
+
+    setUserName(selectedUser.name);
   };
 
   return (

@@ -12,6 +12,7 @@ import AllProfiles from './pages/AllProfiles';
 import AllArtists from './pages/AllArtists';
 import Artist from './pages/Artist';
 import TopSongs from './pages/TopSongs';
+import { MyProvider } from './context/HelloContext';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,10 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <MyProvider>
+      <RouterProvider router={router} />
+    </MyProvider>
+  );
 }
-
 export default App;
