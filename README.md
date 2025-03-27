@@ -9,6 +9,7 @@ Den här applikationen gör det möjligt att visa statistik över en individs mu
 - **Top Track Chart**: Lagt till en lista med de 25 mest populära låtarna via LastFM API, inklusive musikens omslagsbilder.
 - **Artistinformation**: Nu kan användare klicka på artistens namn för att läsa mer om deras biografi och även upptäcka liknande artister.
 - **Förbättrad tillgänglighet**: Tillgängligheten för användare som navigerar med tab-tangenten har förbättrats, och det är nu tydligare när ett element är i fokus. Dessutom har ARIA-labels och roller lagts till för att ge bättre skärmläsarstöd.
+- **Användarprofil i Headern**: Använder `useContext API` för att hämta och visa aktuell användarprofil i headern, vilket gör det möjligt att dynamiskt uppdatera profilinformation baserat på användarens val.
 
 ## Teknologier
 
