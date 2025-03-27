@@ -11,7 +11,7 @@ function ErrorPage() {
           {' '}
           Testa uppdatera sidan igen eller gå tillbaka till startsidan{' '}
         </h2>
-        <button className='flex justify-center w-100 text-2xl mt-15 text-white bg-primary hover:bg-tertiary hover:scale-105 active:bg-secondary active:scale-95 transition-all duration-500 p-4 rounded-3xl'>
+        <button className='flex justify-center w-100 text-2xl mt-15 text-text dark:text-text-dark bg-primary hover:bg-tertiary hover:scale-105 active:bg-secondary active:scale-95 transition-all duration-500 p-4 rounded-3xl'>
           <Link to='/'>Tillbaka till startsidan</Link>
         </button>
       </div>

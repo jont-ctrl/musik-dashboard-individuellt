@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { HelloContext } from '../context/HelloContext';
+import mockData from '../data/mockData.json';
 
 export default function NavHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  const { userName, setUserName } = useContext(HelloContext);
+  const { userName } = useContext(HelloContext);
+  const [userID, setUserID] = useState(null);
 
   function handleDarkMode() {
     setDarkMode(!darkMode);
@@ -14,12 +16,20 @@ export default function NavHeader() {
     localStorage.setItem('darkMode', !darkMode);
   }
 
-  // On first load get dark mode setting localstorage
+  // On first load get dark mode setting from localStorage
   useEffect(() => {
     localStorage.getItem('darkMode') === 'true'
       ? (setDarkMode(true), document.documentElement.classList.add('dark'))
       : (setDarkMode(false), document.documentElement.classList.remove('dark'));
   }, []);
+
+  // Set userID based on userName
+  useEffect(() => {
+    const user = mockData.users.find((user) => user.name === userName);
+    if (user) {
+      setUserID(user.id);
+    }
+  }, [userName]);
 
   // Toggle mobile menu
   const toggleMenu = () => {
@@ -35,7 +45,7 @@ export default function NavHeader() {
         className='flex justify-between items-center'
         aria-label='Main navigation'
       >
-        {/* Logo (klickbar länk till startsidan) */}
+        {/* Logo (clickable link to homepage) */}
         <Link
           to='/'
           className='text-4xl font-extrabold text-white hover:text-tertiary active:scale-90 transition-all duration-200 transform hover:scale-110'
@@ -78,12 +88,15 @@ export default function NavHeader() {
           </li>
           {/* Add username for desktop */}
           <li role='menuitem'>
-            <p
-              className='text-white text-lg font-medium'
-              aria-label={`Logged in as ${userName}`}
-            >
-              {userName}
-            </p>
+            {userID && (
+              <Link
+                to={`/profiles/${userID}`}
+                className='text-primary dark:text-secondary text-lg font-medium'
+                aria-label={`Logged in as ${userName}`}
+              >
+                {userName}
+              </Link>
+            )}
           </li>
         </ul>
 
@@ -157,12 +170,15 @@ export default function NavHeader() {
           </li>
           {/* Add username for mobile */}
           <li role='menuitem'>
-            <p
-              className='text-white text-lg font-medium'
-              aria-label={`Logged in as ${userName}`}
-            >
-              {userName}
-            </p>
+            {userID && (
+              <Link
+                to={`/profiles/${userID}`}
+                className='text-primary dark:text-secondary text-lg font-medium'
+                aria-label={`Logged in as ${userName}`}
+              >
+                {userName}
+              </Link>
+            )}
           </li>
         </ul>
       </div>
